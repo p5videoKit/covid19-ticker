@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>?=v1 covid19-ticker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      // track startup time for debugging
+      let a_start_now = window.performance.now();
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <!-- this is an include for the videoKit lbrary  -->
+    <!-- included the local version or from web -->
+    <!-- <script type="module" src="./videoKit/a/a_lib.js"></script> -->
+    <script type="module" src="https://unpkg.com/p5-video-kit@0.0.5/dist/p5videoKit.esm.js"></script>
+
+    <!-- firebase cloud services library -->
+    <script type="module" src="https://unpkg.com/itp-molib@0.2.16/dist/moLib.esm.js"></script>
+
+    <script src="a_videoKit_setup.js"></script>
+    <script src="a_videoKit_settings.js"></script>
+    <script src="setup_dbase.js"></script>
+    <script src="a-sketch.js"></script>
+  </body>
+</html>
