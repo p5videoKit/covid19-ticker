@@ -11,9 +11,6 @@ import '../sub/sketch_load.js';
 import '../sub/sketch_paused.js';
 
 eff_ticker.prototype.init = function () {
-  // my_canvas = createCanvas(a_width, a_height);
-  // let parent = document.getElementsByTagName('body')[0];
-  // parent.insertBefore(my_canvas.elt, title.elt);
   console.log('eff_ticker init');
   this.let_init();
   this.fresh_canvas();
