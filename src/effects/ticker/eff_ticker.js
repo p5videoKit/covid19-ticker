@@ -1,9 +1,4 @@
 //
-// !!@ can not import init due to circular reference
-// !!@ need secondary class
-// import './sub/init.js';
-
-import eff_ticker_sub from './sub/eff_ticker_sub.js';
 
 export default class eff_ticker {
   static meta_props = [
@@ -82,6 +77,8 @@ export default class eff_ticker {
   }
 }
 
+import eff_ticker_sub from './sub/eff_ticker_sub.js';
+
 import './sub/init.js';
 import './sub/sketch_draw_dots.js';
 import './sub/sketch_draw.js';
@@ -89,3 +86,7 @@ import './sub/sketch_font8.js';
 import './sub/sketch_let.js';
 import './sub/sketch_load.js';
 import './sub/sketch_paused.js';
+
+// !!@ can not import init due to circular reference
+// !!@ need secondary class
+// import './sub/init.js';
