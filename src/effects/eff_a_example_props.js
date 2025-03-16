@@ -49,8 +49,9 @@ export default class eff_a_example_props {
     this.output = createGraphics(width, height);
     console.log('eff_a_example_props constructor width, height', width, height);
 
-    this.xpos = Math.floor(width * 0.5);
-    this.ypos = Math.floor(height * 0.75);
+    // xpos and ypos unit measure 0.0 to 1.0
+    this.xpos = 0;
+    this.ypos = 0;
     this.xspeed = 0;
     this.yspeed = 0;
   }
@@ -59,16 +60,22 @@ export default class eff_a_example_props {
     // console.log('eff_example prepareOutput text_prop', this.text_prop);
 
     let { width, height } = this.output;
-
-    let x = 0;
-    let y = height / 10;
-    let txsize = height / 10;
-    this.output.textSize(txsize);
-    let txt = this.textInput_prop + ' ' + this.num_prop + ' ' + this.slider1_prop;
-    this.output.text(txt, x, y);
-
-    this.xpos = (this.xpos + this.xspeed + width) % width;
-    this.ypos = (this.ypos + this.yspeed + height) % height;
-    this.output.circle(this.xpos, this.ypos, this.num_prop);
+    {
+      let x = 0;
+      let y = height / 10;
+      let txsize = height / 10;
+      this.output.textSize(txsize);
+      let txt = this.textInput_prop + ' ' + this.num_prop + ' ' + this.slider1_prop;
+      this.output.text(txt, x, y);
+    }
+    {
+      this.xpos += this.xspeed * 0.005;
+      this.ypos += this.yspeed * 0.005;
+      let wh = width * 0.5;
+      let hh = height * 0.5;
+      let x = Math.floor(wh + Math.sin(this.xpos) * wh);
+      let y = Math.floor(hh + Math.sin(this.ypos) * hh);
+      this.output.circle(x, y, this.num_prop);
+    }
   }
 }
