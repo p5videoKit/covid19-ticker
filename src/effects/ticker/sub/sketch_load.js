@@ -1,6 +1,6 @@
 //
 
-import eff_ticker from '../eff_ticker.js';
+import eff_ticker from '../sub/eff_ticker_sub.js';
 
 //
 //

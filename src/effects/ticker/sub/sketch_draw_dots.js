@@ -1,6 +1,6 @@
 //
 
-import eff_ticker from '../eff_ticker.js';
+import eff_ticker from '../sub/eff_ticker_sub.js';
 
 eff_ticker.prototype.draw_dots_fast = function () {
   let n = this.test_fast ? this.test_fast_n : 1;

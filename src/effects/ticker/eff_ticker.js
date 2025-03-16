@@ -3,6 +3,8 @@
 // !!@ need secondary class
 // import './sub/init.js';
 
+import eff_ticker_sub from './sub/eff_ticker_sub.js';
+
 export default class eff_ticker {
   static meta_props = [
     { prop: 'display_copy_right', selection: [0, 1] },
@@ -59,32 +61,31 @@ export default class eff_ticker {
     this.output = createGraphics(width, height);
     // console.log('width', this.width);
 
+    let sub = new eff_ticker_sub(this);
+    sub.init();
+    this.sub = sub;
     // this.display_single_date = this.most_lost_ndays != 0;
 
     // dynamic import - .
-    import('./sub/init.js')
-      .then((module) => {
-        // console.log('eff_ticker module', module);
-        this.init();
-      })
-      .catch((err) => {
-        console.log('eff_ticker err', err);
-      });
+    // import('./sub/init.js')
+    //   .then((module) => {
+    //     // console.log('eff_ticker module', module);
+    //     this.init();
+    //   })
+    //   .catch((err) => {
+    //     console.log('eff_ticker err', err);
+    //   });
   }
   prepareOutput() {
-    console.log('eff_ticker prepareOutput stub');
+    // console.log('eff_ticker prepareOutput');
+    this.sub.prepareOutput();
   }
 }
 
-// import './sub/init.js';
-// import './sub/sketch_draw_dots.js';
-// import './sub/sketch_draw.js';
-// import './sub/sketch_font8.js';
-// import './sub/sketch_let.js';
-// import './sub/sketch_load.js';
-// import './sub/sketch_paused.js';
-
-// window.eff_ticker = eff_ticker;
-// global class eff_ticker becomes the base for other methods, eg.
-//  eff_ticker.prototype.init = function () {
-// example of converting mult-script global to class methods.
+import './sub/init.js';
+import './sub/sketch_draw_dots.js';
+import './sub/sketch_draw.js';
+import './sub/sketch_font8.js';
+import './sub/sketch_let.js';
+import './sub/sketch_load.js';
+import './sub/sketch_paused.js';

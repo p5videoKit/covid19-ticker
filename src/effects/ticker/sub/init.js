@@ -1,17 +1,19 @@
 //
 //
 
-import eff_ticker from '../eff_ticker.js';
+// import eff_ticker from '../eff_ticker.js';
+import eff_ticker from '../sub/eff_ticker_sub.js';
 
-import '../sub/sketch_draw_dots.js';
-import '../sub/sketch_draw.js';
-import '../sub/sketch_font8.js';
-import '../sub/sketch_let.js';
-import '../sub/sketch_load.js';
-import '../sub/sketch_paused.js';
+// retired dynamic import
+// import '../sub/sketch_draw_dots.js';
+// import '../sub/sketch_draw.js';
+// import '../sub/sketch_font8.js';
+// import '../sub/sketch_let.js';
+// import '../sub/sketch_load.js';
+// import '../sub/sketch_paused.js';
 
 eff_ticker.prototype.init = function () {
-  console.log('eff_ticker init');
+  console.log('eff_ticker_sub init');
   this.let_init();
   this.fresh_canvas();
   this.begin_day();
@@ -24,7 +26,7 @@ eff_ticker.prototype.init = function () {
 
 // overwrite stub prepareOutput in eff_ticker.js
 eff_ticker.prototype.prepareOutput = function () {
-  // console.log('eff_ticker prepareOutput');
+  // console.log('eff_ticker_sub prepareOutput');
   if (!this.json_loaded) return;
   if (!this.a_run) return;
   if (this.a_state === 'draw_bit') {
