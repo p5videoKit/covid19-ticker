@@ -58,24 +58,25 @@ export default class eff_a_example_props {
 
   prepareOutput() {
     // console.log('eff_example prepareOutput text_prop', this.text_prop);
-
+    let { output } = this;
     let { width, height } = this.output;
+    output.fill(255);
     {
       let x = 0;
-      let y = height / 10;
-      let txsize = height / 10;
-      this.output.textSize(txsize);
+      let y = height * 0.1;
+      let txsize = height * 0.1;
+      output.textSize(txsize);
       let txt = this.textInput_prop + ' ' + this.num_prop + ' ' + this.slider1_prop;
-      this.output.text(txt, x, y);
+      output.text(txt, x, y);
     }
     {
       this.xpos += this.xspeed * 0.005;
       this.ypos += this.yspeed * 0.005;
       let wh = width * 0.5;
-      let hh = height * 0.5;
+      let hh = height * 0.75;
       let x = Math.floor(wh + Math.sin(this.xpos) * wh);
       let y = Math.floor(hh + Math.sin(this.ypos) * hh);
-      this.output.circle(x, y, this.num_prop);
+      output.circle(x, y, this.num_prop);
     }
   }
 }

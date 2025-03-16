@@ -1,4 +1,7 @@
 //
+// !!@ can not import init due to circular reference
+// !!@ need secondary class
+// import './sub/init.js';
 
 export default class eff_ticker {
   static meta_props = [
