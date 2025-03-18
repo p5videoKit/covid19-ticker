@@ -18,7 +18,7 @@ export default class eff_worley {
   }
   initGraphics() {
     this.output = createGraphics(100, 100);
-    console.log('eff_worley constructor width, height', width, height);
+    console.log('eff_worley initGraphics width, height', width, height);
   }
   initPoints() {
     let points = this.points;
@@ -43,7 +43,6 @@ export default class eff_worley {
     layer.loadPixels();
     let w = layer.width;
     let h = layer.height;
-    let ww = w * 1;
     this.frameIndex += this.frameDelta;
     if (this.frameIndex >= w || this.frameIndex < 0) {
       this.frameDelta = this.frameDelta * -1;

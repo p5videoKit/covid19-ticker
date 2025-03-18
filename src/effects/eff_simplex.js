@@ -13,7 +13,7 @@ export default class eff_simplex {
     Object.assign(this, props);
     // console.log('eff_simplex props', props);
     this.increment = 0.03;
-    this.incrementZ = this.increment * 0.5;
+    this.incrementZ = this.increment * this.uspeed;
     this.zoff = 0;
     this.noise = new OpenSimplexNoise(Date.now());
     this.initGraphics();
@@ -24,7 +24,7 @@ export default class eff_simplex {
     let h = this.uheight;
     this.output = createGraphics(w, h);
     // this.output = createGraphics(106, 60);
-    console.log('eff_worley constructor width, height', width, height);
+    console.log('eff_worley initGraphics width, height', width, height);
   }
 
   prepareOutput() {
