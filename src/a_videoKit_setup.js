@@ -24,6 +24,7 @@ let videoKit_config = {
 
   effects: [
     { label: 'a_example_props', import_path: 'effects/eff_a_example_props.js' },
+    { label: 'eff_simplex', import_path: 'effects/eff_simplex.js' },
     { label: 'eff_worley', import_path: 'effects/eff_worley.js' },
     { label: 'ticker', import_path: 'effects/ticker/eff_ticker.js', ui_label: 'ticker' },
   ],
