@@ -1,5 +1,6 @@
-// eff_a_example_props - using meta_props for showing effect properties in the dashboard
 //
+// eff_worley
+
 export default class eff_worley {
   static meta_props = [
     //

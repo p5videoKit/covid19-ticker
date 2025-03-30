@@ -1,5 +1,6 @@
-// eff_a_example_props - using meta_props for showing effect properties in the dashboard
 //
+// eff_simplex
+
 export default class eff_simplex {
   static meta_props = [
     //
