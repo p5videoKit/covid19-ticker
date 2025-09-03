@@ -6,7 +6,7 @@
 
 - run locally with VS Code live server
 
-  - src/index.html
+  - [src/index.html](src/index.html)
 
 - Reset in dashboard
 
