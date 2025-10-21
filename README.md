@@ -1,6 +1,6 @@
 # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
 
-- ?v=3
+- ?v=4
 
 ## Setup
 
