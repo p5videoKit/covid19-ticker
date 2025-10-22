@@ -2,8 +2,11 @@
 
 export default class eff_ticker {
   static meta_props = [
+    // property names must not conflict with eff_ticker.prototype.func_name
+    //
     { prop: 'display_copy_right', selection: [0, 1] },
-    { prop: 'locale', selection: ['USA', 'NY', 'NYC', 'BKLYN', 'JA', 'GY'], br: 1 },
+    { prop: 'locale', selection: ['USA', 'NY', 'NYC', 'BKLYN', 'JA', 'GY'] },
+    { prop: 'draw_figure', selection: [0, 1], br: 1 },
     { prop: 'display_tall', selection: [0, 1] },
     { prop: 'display_single_date', selection: [0, 1] },
     { prop: 'most_lost_ndays', selection: [0, 31, 100, -1], br: 1 },

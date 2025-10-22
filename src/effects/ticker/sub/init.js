@@ -14,6 +14,7 @@ import eff_ticker from '../sub/eff_ticker_sub.js';
 
 eff_ticker.prototype.init = function () {
   console.log('eff_ticker_sub init');
+  globalThis.g_ticker = this;
   this.let_init();
   this.fresh_canvas();
   this.begin_day();
@@ -144,7 +145,8 @@ eff_ticker.prototype.draw_day_count = function () {
   // let str = 'DAY ' + data_index + ' of ' + a_data.length;
   let str = this.locale + ' COVID DEATHS - DAY ' + ns(this.data_index) + ' of ' + ns(this.a_data.length);
   let ds = ns(this.total_deaths);
-  str += ' - TOTAL DEATHS ' + ds + '';
+  let postFix = this.a_data[this.a_data.length - 1].on;
+  str += ' - TOTAL DEATHS ' + ds + ' - ' + postFix;
   // console.log('draw_day_count ', str);
   let th = this.pix_len * 1.5;
   this.output.textSize(th);

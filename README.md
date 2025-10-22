@@ -1,6 +1,6 @@
 # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
 
-- ?v=4
+- ?v=5
 
 ## Setup
 
@@ -12,12 +12,37 @@
 
 - Select ticker in Effect drop down
 
-- https://unpkg.com/p5-video-kit@0.0.15/dist/p5videoKit.esm.js
+- https://unpkg.com/p5-video-kit@0.0.17/dist/p5videoKit.esm.js
 
 ## TODO
 
-- [] dashboard option for Sai's figures
-
-- [] option to check for video - allow no camera mode
-
 - [] slower people icon
+
+```
+2025-10-22 09:51:01
+
+>> display last sample date
+
+!!@ most recent note not 2025-10-22 but 2025-08-29
+g_ticker.a_data[g_ticker.a_data.length - 1].on
+'2025-08-29'
+
+  str += ' - TOTAL DEATHS ' + ds + '';
+
+eff_ticker.prototype.draw_dot_figures = function () {
+eff_ticker.prototype.draw_dot_figures = function (a_x, a_y, len_x, len_y) {
+
+2025-10-22 07:44:06
+Sai Ram Ved Vijapurapu
+
+// eff_ticker.prototype.draw_dots = function () {
+
+// eff_ticker.prototype.draw_dot = function (a_x, a_y, len_x, len_y) {
+
+
+```
+
+## DONE
+
+- [x] dashboard option for Sai's figures
+- [x] option to check for video - allow no camera mode
