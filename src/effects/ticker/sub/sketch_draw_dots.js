@@ -3,6 +3,14 @@
 import eff_ticker from '../sub/eff_ticker_sub.js';
 
 eff_ticker.prototype.draw_dots_fast = function () {
+  if (this.draw_paused_count) {
+    this.draw_paused_count--;
+    if (this.draw_paused_count <= 0) {
+      this.draw_paused_count = this.draw_paused_init;
+    } else {
+      return;
+    }
+  }
   let n = this.test_fast ? this.test_fast_n : 1;
   // attempt at dot rhythm
   // n = random([0, 1]);
@@ -13,6 +21,14 @@ eff_ticker.prototype.draw_dots_fast = function () {
 
 eff_ticker.prototype.draw_dots = function () {
   if (this.draw_figure) {
+    if (!this.draw_paused_init) {
+      this.draw_paused_init = 10;
+      this.draw_paused_count = this.draw_paused_init;
+    }
+    if (this.a_count > 200) {
+      this.draw_paused_count = -1;
+      console.log('this.draw_paused_count = -1');
+    }
     this.draw_dot_figures();
     return;
   }

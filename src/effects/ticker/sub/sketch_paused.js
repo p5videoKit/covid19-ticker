@@ -22,10 +22,14 @@ eff_ticker.prototype.page_pause = function () {
   }
   this.page_pause_count -= 1;
   if (this.page_pause_count < 0) {
-    this.a_state = 'draw_bit';
-    this.a_paused = 0;
-    this.dot_next();
+    this.page_next();
   }
+};
+
+eff_ticker.prototype.page_next = function () {
+  this.a_state = 'draw_bit';
+  this.a_paused = 0;
+  this.dot_next();
 };
 
 eff_ticker.prototype.set_paused = function () {

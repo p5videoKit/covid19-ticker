@@ -33,19 +33,26 @@ export default class eff_ticker {
     {
       prop: 'toggleRun',
       button: (inst, aPatch) => {
-        inst.a_run = !inst.a_run;
-        console.log('eff_ticker a_run', inst.a_run);
+        inst.sub.a_run = !inst.sub.a_run;
+        console.log('eff_ticker inst.sub.a_run', inst.sub.a_run);
       },
     },
     {
       prop: 'toggleJump',
       button: (inst, aPatch) => {
-        if (inst.day_next < 100) {
-          inst.day_next = inst.a_data.length - 30;
+        if (inst.sub.day_next < 100) {
+          inst.sub.day_next = inst.sub.a_data.length - 30;
         } else {
-          inst.day_next = 0;
+          inst.sub.day_next = 0;
         }
-        console.log('eff_ticker day_next', inst.day_next);
+        console.log('eff_ticker day_next', inst.sub.day_next);
+      },
+    },
+    {
+      prop: 'next',
+      button: (inst, aPatch) => {
+        console.log('eff_ticker next');
+        inst.sub.page_next();
       },
     },
     { prop: 'test_fast', selection: [0, 1, 2, 4] },
