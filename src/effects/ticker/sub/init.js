@@ -30,8 +30,11 @@ eff_ticker.prototype.prepareOutput = function () {
   // console.log('eff_ticker_sub prepareOutput');
   if (!this.json_loaded) return;
   if (!this.a_run) return;
-  if (this.a_state === 'draw_bit') {
-    this.draw_bit();
+  if (this.a_state == 'draw_bit') {
+    this.draw_bit(this.test_fast);
+  } else if (this.a_state == 'fade_down') {
+    this.draw_fade_down();
+    return;
   } else {
     this.page_pause();
   }
@@ -110,12 +113,36 @@ eff_ticker.prototype.clear_per_day = function () {
   if (this.day_next >= 1 && !this.display_single_date) {
     yLeft = this.y_top;
     yRight = this.panel_top;
-    // console.log('clear_per_day yRight', yRight, 'yLeft', yLeft, 'day_next', day_next);
+    console.log('clear_per_day yRight', yRight, 'yLeft', yLeft, 'day_next', this.day_next);
+    this.fade_info = { yLeft, yRight, alpha: 0, delta: 1 };
+    this.a_state = 'fade_down';
+    this.draw_fade_down();
+    return;
+  } else {
+    console.log('clear_per_day day_next', this.day_next);
   }
   this.output.erase();
-  this.output.fill(0);
+  this.output.fill(0, 100);
   this.output.rect(0, yLeft, this.panel_right, this.height);
   this.output.rect(this.panel_right, yRight, this.width - this.panel_right, this.height);
+  this.output.noErase();
+};
+
+eff_ticker.prototype.draw_fade_down = function (fi) {
+  if (!fi) {
+    fi = this.fade_info;
+  }
+  fi.alpha += fi.delta;
+  if (fi.alpha > 50) {
+    console.log('draw_fade_down fi.alpha', fi.alpha);
+    fi.alpha = 255;
+    this.a_state = 'draw_bit';
+  }
+  this.output.erase();
+  this.output.fill(0, fi.alpha);
+  this.output.rect(0, fi.yLeft, this.panel_right, this.height);
+  this.output.rect(this.panel_right, fi.yRight, this.width - this.panel_right, this.height);
+  this.output.rect(this.panel_right, fi.yRight, this.width - this.panel_right, this.height);
   this.output.noErase();
 };
 
@@ -143,10 +170,13 @@ eff_ticker.prototype.draw_progress = function () {
 eff_ticker.prototype.draw_day_count = function () {
   // str = 'day ' + data_index + '/' + a_data.length + ' ';
   // let str = 'DAY ' + data_index + ' of ' + a_data.length;
-  let str = this.locale + ' COVID DEATHS - DAY ' + ns(this.data_index) + ' of ' + ns(this.a_data.length);
+  let str = this.locale + ' COVID DEATHS ' + this.a_count;
+  str += ' - DAY ' + ns(this.data_index) + ' of ' + ns(this.a_data.length);
+  // let str = this.locale + ' COVID DEATHS - DAY ' + ns(this.data_index) + ' of ' + ns(this.a_data.length);
   let ds = ns(this.total_deaths);
   let postFix = this.a_data[this.a_data.length - 1].on;
-  str += ' - TOTAL DEATHS ' + ds + ' - ' + postFix;
+  str += ' - TOTAL ' + ds + ' - ' + postFix;
+  // str += ' - TOTAL DEATHS ' + ds + ' - ' + postFix;
   // console.log('draw_day_count ', str);
   let th = this.pix_len * 1.5;
   this.output.textSize(th);

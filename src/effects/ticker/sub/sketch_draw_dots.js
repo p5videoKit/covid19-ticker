@@ -27,7 +27,7 @@ eff_ticker.prototype.draw_dots = function () {
     }
     if (this.a_count > this.draw_paused_count_max) {
       this.draw_paused_count = 1;
-      console.log('this.draw_paused_count = 1');
+      // console.log('this.draw_paused_count = 1');
     }
     this.draw_dot_figures();
     return;

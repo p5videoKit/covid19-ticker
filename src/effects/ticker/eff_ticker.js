@@ -49,10 +49,17 @@ export default class eff_ticker {
       },
     },
     {
-      prop: 'next',
+      prop: 'page_next',
       button: (inst, aPatch) => {
         console.log('eff_ticker next');
         inst.sub.page_next();
+      },
+    },
+    {
+      prop: 'date_next',
+      button: (inst, aPatch) => {
+        console.log('eff_ticker next');
+        inst.sub.date_next();
       },
     },
     { prop: 'test_fast', selection: [0, 1, 2, 4] },

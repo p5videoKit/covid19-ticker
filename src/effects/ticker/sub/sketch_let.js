@@ -60,7 +60,7 @@ eff_ticker.prototype.let_init = function () {
   ];
   this.dot_cindex = 0;
   this.panel_right, this.panel_width, this.panel_top, this.panel_height;
-  this.a_state = 'draw_bit';
+  // this.a_state = 'draw_bit';
   this.a_down = 0;
   this.a_dir = 'down';
   // this.a_dir = 'up';

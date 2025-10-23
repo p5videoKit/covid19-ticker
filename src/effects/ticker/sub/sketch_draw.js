@@ -28,11 +28,11 @@ eff_ticker.prototype.draw_char_start = function () {
   this.output.noErase();
 };
 
-eff_ticker.prototype.draw_bit = function () {
+eff_ticker.prototype.draw_bit = function (test_fast) {
   let n = 1;
   let rush = this.dot_count_reached();
-  if (this.test_fast) {
-    n = this.test_fast_n * this.test_fast;
+  if (test_fast) {
+    n = this.test_fast_n * test_fast;
   } else if (rush) {
     n = this.draw_bit_delay;
   }

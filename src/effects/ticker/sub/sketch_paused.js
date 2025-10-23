@@ -34,6 +34,10 @@ eff_ticker.prototype.page_pause = function () {
   }
 };
 
+eff_ticker.prototype.date_next = function () {
+  this.draw_bit(100);
+};
+
 eff_ticker.prototype.page_next = function () {
   this.a_state = 'draw_bit';
   this.a_paused = 0;

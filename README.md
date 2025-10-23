@@ -1,6 +1,6 @@
 # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
 
-- ?v=6
+- ?v=7
 
 ## Setup
 
@@ -16,7 +16,35 @@
 
 ## TODO
 
+[] fadeout to next day
+
+## Notes
+
 ```
+2025-10-23 10:48:56 v=7
+2025-10-23 08:41:39
+
+fade_down
+draw_fade_down
+this.a_state == 'fade_down'
+this.a_state == 'draw_bit';
+this.a_state = 'draw_bit';
+this.a_state = 'page_pause';
+
+eff_ticker.prototype.prepareOutput = function () {
+    this.draw_bit(); a_state === 'draw_bit
+    this.page_pause();
+
+page_next
+  dot_next
+  select_entry
+  begin_day
+  clear_per_day
+date_next
+
+test_fast
+test_fast_n
+
 2025-10-22 21:14:54
 
   this.page_pause_secs = 10;
