@@ -20,7 +20,7 @@ eff_ticker.prototype.load_json = function () {
   // let url = 'https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/world/c_series/United_States.json';
   // console.log('load_json url', url);
   if (!this.locale) this.locale = 'USA';
-  let url = c19_url_root + c19_series[this.locale];
+  let url = c19_url_root + c19_series[this.locale] + '?v=' + Math.random();
   console.log('load_json locale', this.locale);
   loadJSON(url, (data) => {
     // console.log('load_json data last', JSON.stringify(data[data.length - 1]));
