@@ -11,7 +11,6 @@ eff_ticker.prototype.let_init = function () {
   this.a_count = 3750;
   this.draw_bit_delay = 1;
   this.a_paused;
-  this.page_pause_secs = 10;
   this.a_string = this.a_count + ' USA\nDeaths on\n2020-12-30\n';
   this.nchars_wide = 12;
   this.a_data;
@@ -96,6 +95,10 @@ eff_ticker.prototype.let_init = function () {
   this.a_state = 'draw_bit';
   this.a_paused = 0;
   this.dot_cindex = 0;
+  this.page_pause_secs = 10;
+  this.draw_min_secs = 3;
+  this.draw_start_time = millis();
+  this.draw_paused_count_max = 400;
   let nlines = Math.floor(this.panel_height / (this.pix_len * 8));
   // console.log('dot_panel_max', this.dot_panel_max);
   // console.log('panel_height', this.panel_height);

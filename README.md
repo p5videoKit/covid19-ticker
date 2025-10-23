@@ -1,6 +1,6 @@
 # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
 
-- ?v=5
+- ?v=6
 
 ## Setup
 
@@ -16,9 +16,19 @@
 
 ## TODO
 
-- [] slower people icon
-
 ```
+2025-10-22 21:14:54
+
+  this.page_pause_secs = 10;
+  this.draw_min_secs = 3;
+  this.draw_start_time = millis();
+  this.draw_paused_count_max = 400;
+
+page_pause_start
+draw_paused
+this.a_paused
+set_paused
+
 2025-10-22 09:51:01
 
 >> display last sample date
@@ -30,7 +40,7 @@ g_ticker.a_data[g_ticker.a_data.length - 1].on
   str += ' - TOTAL DEATHS ' + ds + '';
 
 eff_ticker.prototype.draw_dot_figures = function () {
-eff_ticker.prototype.draw_dot_figures = function (a_x, a_y, len_x, len_y) {
+eff_ticker.prototype.draw_dot_figure = function (a_x, a_y, len_x, len_y) {
 
 2025-10-22 07:44:06
 Sai Ram Ved Vijapurapu
@@ -44,5 +54,6 @@ Sai Ram Ved Vijapurapu
 
 ## DONE
 
+- [x] slower draw_dot_figures
 - [x] dashboard option for Sai's figures
 - [x] option to check for video - allow no camera mode

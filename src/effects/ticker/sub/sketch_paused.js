@@ -8,7 +8,15 @@ eff_ticker.prototype.page_pause_start = function () {
   // page_pause_count = test_fast ? 1 : page_pause_frames;
   // page_pause_count = test_fast ? page_pause_frames / 2 : page_pause_frames;
   // console.log('page_pause_start day_next', this.day_next);
-  let n = this.test_fast ? 0 : this.page_pause_secs;
+  let now = millis();
+  let lapse = (now - this.draw_start_time) / 1000;
+  this.draw_start_time = now;
+  console.log('page_pause_start lapse', lapse);
+  let diff = this.page_pause_secs - lapse;
+  console.log('page_pause_start diff', diff);
+  if (diff < this.draw_min_secs) diff = this.draw_min_secs;
+  let n = this.test_fast ? 0 : diff;
+  // let n = this.test_fast ? 0 : this.page_pause_secs;
   if (this.test_skip_pause) n = 0;
   // if (this.day_next == 1) n = 0;
   this.page_pause_count = n * frameRate();
