@@ -4,7 +4,7 @@ function videoKit_setup() {
   //
   videoKit = p5videoKit_init(videoKit_config);
 
-  videoKit.save_canvas_handler = save_canvas_handler;
+  // videoKit.save_canvas_handler = save_canvas_handler;
 
   videoKit.import_effect_handler = import_effect_handler;
 }
@@ -35,7 +35,10 @@ let videoKit_config = {
   // for all the settings associated with the effect
   // "settings" is an array of
 
-  settings: [{ label: 'videoKit', import_path: 'settings/videoKit.json' }],
+  settings: [
+    { label: 'videoKit', import_path: 'settings/ticker-bkyn.json' },
+    // { label: 'videoKit', import_path: 'settings/videoKit.json' },
+  ],
 
   videos: [],
 };

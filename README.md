@@ -20,6 +20,13 @@
 ## Notes
 
 ```
+2026-03-30 11:13:25
+
+?u=1&d=settings/ticker-bkyn.json
+
+<a href="../index.html?u=1&d=settings/ticker-bkyn.json" target="settings-1">settings/ticker-bkyn.json</><br/><br/>
+
+
 2026-03-29 21:16:41
 
     { prop: 'day_count_up', selection: [0, 1] },
