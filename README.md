@@ -1,6 +1,6 @@
 # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
 
-- ?v=8
+- ?v=9
 
 ## Setup
 
@@ -13,7 +13,7 @@
 
 ## TODO
 
-- [ticker-bkyn](src/index.html?u=1&d=settings/ticker-bkyn.json)
+- [ticker-bkyn](src/index.html?u=1&d=settings/ticker-bkyn.json&hide=1)
 
 ## Notes
 
