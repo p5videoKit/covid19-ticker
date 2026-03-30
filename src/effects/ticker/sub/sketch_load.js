@@ -63,36 +63,42 @@ eff_ticker.prototype.find_start_date = function (start_date) {
   return this.a_data.length;
 };
 
+eff_ticker.prototype.select_entry_down = function () {
+  let ent1;
+  do {
+    this.data_index_down--;
+    if (this.data_index_down < 1) {
+      this.data_index_down = this.a_data.length - 1;
+      this.cycle_done = 1;
+    }
+    this.data_index = this.data_index_down;
+    ent1 = this.a_data[this.data_index];
+    this.a_count = ent1.count;
+    // console.log('select_entry data_index', this.data_index, ent1);
+  } while (this.a_count < 1);
+  return ent1;
+};
+
+eff_ticker.prototype.select_entry_up = function () {
+  let ent1;
+  do {
+    this.data_index_up++;
+    if (this.data_index_up >= this.a_data.length) {
+      this.data_index_up = 0;
+      this.cycle_done = 1;
+    }
+    this.data_index = this.data_index_up;
+    ent1 = this.a_data[this.data_index];
+    this.a_count = ent1.count;
+    // console.log('select_entry data_index', this.data_index, ent1);
+  } while (this.a_count < 1);
+  return ent1;
+};
+
 eff_ticker.prototype.select_entry = function () {
   let ent1;
-  let select_down = () => {
-    do {
-      this.data_index_down--;
-      if (this.data_index_down < 1) {
-        this.data_index_down = this.a_data.length - 1;
-        this.cycle_done = 1;
-      }
-      this.data_index = this.data_index_down;
-      ent1 = this.a_data[this.data_index];
-      this.a_count = ent1.count;
-      // console.log('select_entry data_index', this.data_index, ent1);
-    } while (this.a_count < 1);
-  };
-  let select_up = () => {
-    do {
-      this.data_index_up++;
-      if (this.data_index_up >= this.a_data.length) {
-        this.data_index_up = 0;
-        this.cycle_done = 1;
-      }
-      this.data_index = this.data_index_up;
-      ent1 = this.a_data[this.data_index];
-      this.a_count = ent1.count;
-      // console.log('select_entry data_index', this.data_index, ent1);
-    } while (this.a_count < 1);
-  };
-  if (this.day_next == 0) select_down();
-  else select_up();
+  if (this.day_next == 0 || !this.day_count_up) ent1 = this.select_entry_down();
+  else ent1 = this.select_entry_up();
   console.log('select_entry day_next', this.day_next, 'data_index_up', this.data_index_up);
   console.log('select_entry ent1.on', ent1.on);
   // console.log('select_entry', ent1.on, new Date());

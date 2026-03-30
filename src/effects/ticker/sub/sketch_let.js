@@ -7,7 +7,8 @@ eff_ticker.prototype.let_init = function () {
   // console.log('let_init test_fast', this.test_fast, typeof this.test_fast);
   this.a_run = 1;
   // this.test_fast = 0;
-  this.test_fast_n = 100;
+  // this.test_fast_n = 100;
+  this.test_fast_n = 50;
   this.a_count = 3750;
   this.draw_bit_delay = 1;
   this.a_paused;
@@ -59,7 +60,7 @@ eff_ticker.prototype.let_init = function () {
     // [211, 211, 211, 255],
   ];
   this.dot_cindex = 0;
-  this.panel_right, this.panel_width, this.panel_top, this.panel_height;
+  (this.panel_right, this.panel_width, this.panel_top, this.panel_height);
   // this.a_state = 'draw_bit';
   this.a_down = 0;
   this.a_dir = 'down';

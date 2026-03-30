@@ -5,7 +5,6 @@
 ## Setup
 
 - run locally with VS Code live server
-
   - [src/index.html](src/index.html)
 
 - Reset in dashboard
@@ -21,6 +20,20 @@
 ## Notes
 
 ```
+2026-03-29 21:16:41
+
+    { prop: 'day_count_up', selection: [0, 1] },
+
+
+2026-03-29 12:19:47
+
+  if (this.day_next == 0) select_down();
+
+eff_ticker.prototype.draw_dot_figure = function (a_x, a_y, len_x, len_y) {
+// !!@ TODO [] Sai: source for point data
+this.draw_figure
+    { prop: 'draw_figure', selection: [0, 1], br: 1 },
+
 2025-10-23 10:48:56 v=7
 2025-10-23 08:41:39
 

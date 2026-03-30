@@ -4,13 +4,15 @@ export default class eff_ticker {
   static meta_props = [
     // property names must not conflict with eff_ticker.prototype.func_name
     //
-    { prop: 'display_copy_right', selection: [0, 1] },
-    { prop: 'locale', selection: ['USA', 'NY', 'NYC', 'BKLYN', 'JA', 'GY'] },
-    { prop: 'draw_figure', selection: [0, 1], br: 1 },
+    { prop: 'day_count_up', selection: [0, 1] },
+    { prop: 'draw_figure', selection: [0, 1] },
+    { prop: 'locale', selection: ['USA', 'NY', 'NYC', 'BKLYN', 'JA', 'GY'], br: 1 },
     { prop: 'display_tall', selection: [0, 1] },
     { prop: 'display_single_date', selection: [0, 1] },
     { prop: 'most_lost_ndays', selection: [0, 31, 100, -1], br: 1 },
-    // { prop: 'start_date', textInput: '2020-04-16' },
+    { prop: 'test_fast', selection: [0, 1, 2, 4] },
+    { prop: 'test_skip_pause', selection: [0, 1] },
+    { prop: 'display_copy_right', selection: [0, 1] },
     {
       prop: 'start_date',
       selection: [
@@ -23,6 +25,7 @@ export default class eff_ticker {
         '2020-03-18', // 10, 56
         '2020-02-29', // 1, 38
       ],
+      br: 1,
     },
     {
       prop: 'dump',
@@ -62,8 +65,6 @@ export default class eff_ticker {
         inst.sub.date_next();
       },
     },
-    { prop: 'test_fast', selection: [0, 1, 2, 4] },
-    { prop: 'test_skip_pause', selection: [0, 1] },
   ];
   constructor(props) {
     Object.assign(this, props);

@@ -36,6 +36,8 @@ let videoKit_config = {
   // "settings" is an array of
 
   settings: [{ label: 'videoKit', import_path: 'settings/videoKit.json' }],
+
+  videos: [],
 };
 
 function ui_log(...args) {
