@@ -22,6 +22,8 @@
 ```
 2026-03-30 11:13:25
 
+git rm -r --cached .DS_Store
+
 ?u=1&d=settings/ticker-bkyn.json
 
 <a href="../index.html?u=1&d=settings/ticker-bkyn.json" target="settings-1">settings/ticker-bkyn.json</><br/><br/>
