@@ -11,7 +11,7 @@
 
 - Select ticker in Effect drop down
 
-## Deply
+## Deploy
 
 - [ticker-bkyn](src/index.html?u=1&d=settings/ticker-bkyn.json&hide=1)
 
