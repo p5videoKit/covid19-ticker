@@ -1,6 +1,5 @@
-// p5LiveVideo example dashboard
-// https://github.com/jht1493/p5videoKit
-//
+// # [covid19-ticker](https://github.com/p5videoKit/covid19-ticker.git)
+
 let videoKit; // home for library routines
 
 p5.disableFriendlyErrors = true; // disables FES to improve performance
@@ -36,3 +35,7 @@ function draw() {
 // https://editor.p5js.org/shawn/sketches/jZQ64AMJc
 // p5LiveMedia Test Video
 // https://github.com/vanevery/p5LiveMedia
+
+// p5LiveVideo example dashboard
+// https://github.com/jht1493/p5videoKit
+//
