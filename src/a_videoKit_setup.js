@@ -36,8 +36,8 @@ let videoKit_config = {
   // "settings" is an array of
 
   settings: [
-    { label: 'videoKit', import_path: 'settings/ticker-bkyn.json' },
-    // { label: 'videoKit', import_path: 'settings/videoKit.json' },
+    { label: 'covid-ticker', import_path: 'settings/covid-ticker.json' },
+    { label: 'ticker-bkyn', import_path: 'settings/ticker-bkyn.json' },
   ],
 
   videos: [],
